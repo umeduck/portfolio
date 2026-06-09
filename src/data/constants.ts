@@ -1,5 +1,5 @@
 export const PROFILE = {
-  name: '梅村',
+  name: '梅村 将暁',
   nameEn: 'Umemura',
   title: 'システムエンジニア / 個人開発者',
   titleEn: 'Software Engineer / Independent Developer',
@@ -7,56 +7,71 @@ export const PROFILE = {
 }
 
 export const LINKS = {
-  github: 'https://github.com/your-username',
-  twitter: 'https://x.com/your-username',
-  email: 'mailto:your@email.com',
-  crownoteLp: 'https://crownote.example.com',
+  github: 'https://github.com/umeduck',
+  twitter: 'https://x.com/crow_note_2026',
+  email: 'mailto:m_umemura@crow-note.net',
+  crownoteLp: 'https://lp.crow-note.net',
 }
 
 export const SKILLS = [
   {
     category: 'Backend',
-    items: ['Ruby on Rails', 'SQL', 'API設計'],
+    items: ['Ruby on Rails', 'PHP (Zend Framework)', 'SQL / MySQL', 'API設計 (Swagger/OpenAPI)'],
   },
   {
     category: 'Frontend',
-    items: ['Vue 3', 'TypeScript', 'Vite'],
+    items: ['Vue 3', 'TypeScript', 'JavaScript', 'Vite'],
   },
   {
     category: 'Infrastructure',
-    items: ['AWS', 'ECS', 'S3', 'CloudWatch', 'RDS', 'Lambda'],
+    items: ['AWS ECS/Fargate', 'Amazon ECR', 'Amazon S3', 'CloudFront', 'Amazon Cognito', 'Route53', 'ACM', 'CloudWatch', 'RDS / Aurora MySQL', 'Docker'],
   },
   {
     category: 'Business / Management',
-    items: ['要件定義', '基本設計', 'テスト設計', 'リリース管理', '業務改善', 'コスト削減'],
+    items: ['要件定義', '基本設計', '詳細設計', 'テスト設計', 'リリース管理', '障害調査・再発防止', '業務改善', 'コスト削減', 'チームマネジメント'],
   },
 ]
 
 export const ACHIEVEMENTS = [
   {
     icon: '💰',
-    title: 'AWS S3 コスト削減',
-    description: '不要ファイルの整理・ストレージクラス最適化などにより、年間約736万円規模のコスト削減を実現。',
+    title: 'AWSコスト最適化',
+    description: '駐車場管理システムのAWS利用状況を分析し、S3運用ルールを見直すことで年間約560万円のコスト削減を実現。',
   },
   {
     icon: '🅿️',
-    title: '駐車場管理システムの開発・保守・改善',
-    description: '駐車場業務に特化したシステムの新機能開発から保守・改善まで一貫して担当。',
+    title: '駐車場管理システムの開発・運用保守',
+    description: '全国の駐車場を管理するシステムについて、要件定義から設計・実装・テスト・リリース・運用保守まで一貫して担当。',
   },
   {
-    icon: '📊',
-    title: 'CloudWatch を活用した EC2 監視設計',
-    description: 'CloudWatch Alarms・Logs・Dashboards を組み合わせた監視基盤を設計・構築。',
+    icon: '🚀',
+    title: 'データベースパフォーマンス改善',
+    description: 'MySQLの実行計画分析とインデックス改善を実施し、システム性能向上とサーバー負荷軽減に貢献。',
   },
   {
-    icon: '🛠️',
-    title: 'Rails / Vue を用いた業務システム開発',
-    description: 'バックエンド（Rails）とフロントエンド（Vue）を組み合わせた業務システムを開発。',
+    icon: '🔍',
+    title: '障害調査・再発防止',
+    description: 'ログ・SQL・ソースコード解析により本番障害の原因を特定。修正対応に加え再発防止策の提案まで担当。',
   },
   {
-    icon: '📋',
-    title: '要件定義からリリースまでの一貫担当',
-    description: 'ヒアリング・要件定義・設計・実装・テスト・リリースまで、全工程を主体的に推進。',
+    icon: '🤝',
+    title: 'フリーランスメンバーのマネジメント',
+    description: 'フリーランスエンジニア最大2名の進捗管理・技術支援を担当し、プロジェクト推進と品質向上に貢献。',
+  },
+  {
+    icon: '🔄',
+    title: '既存システムへの Vue.js 導入',
+    description: '自社Webサービスへの段階的なVue.js移行を担当。導入時に発生したCORS問題を調査・解消。',
+  },
+  {
+    icon: '📄',
+    title: 'API定義書（Swagger）整備',
+    description: '既存会計システムのPHPソースコードを解析しAPI仕様を整理。Swagger(OpenAPI)による定義書を作成し保守性・開発効率を向上。',
+  },
+  {
+    icon: '🤖',
+    title: '生成AIを活用した開発効率化',
+    description: 'Claude CodeやChatGPTを活用し、設計・実装・調査・ドキュメント作成業務を効率化。',
   },
 ]
 
@@ -64,36 +79,36 @@ export const PROJECTS = [
   {
     id: 'crownote',
     name: 'CrowNote',
-    tagline: '人生の検索エンジン',
-    description: '会話・思考・メモを保存し、あとから検索できるパーソナルナレッジベース。「あの時考えたこと」をいつでも引き出せる場所を目指して開発中。',
-    background: '日常の会話やひらめきが記録されずに消えていく課題を感じ、個人で開発を開始。AIと組み合わせることで、単なるメモ以上の価値を提供したいと考えている。',
-    problem: '人間の思考・会話は揮発性が高く、後から参照しようとしても探せない。既存のメモアプリは「書く手間」が大きく、日常的に継続しにくい。',
-    vision: 'AIによる自動タグ付け・要約・関連情報の提示を強化し、ユーザーの「思考の外部化」を支援するプロダクトへ進化させる。',
-    stack: ['Ruby on Rails', 'Vue 3', 'AWS', 'AI活用'],
-    link: 'https://crownote.example.com',
+    tagline: '人生を検索する',
+    description: '録音した会話を文字起こしし、あとから検索できる個人開発サービス。「人生を検索する」をコンセプトに、企画・開発・AWSインフラ構築・運営まで一人で担当。',
+    background: '会話の中で生まれたアイデアや約束、思考の断片が記録されずに流れていってしまうことに課題を感じ、個人開発をスタート。録音データを文字起こしし、検索可能な形で蓄積することで、過去の会話を資産として活用できる仕組みを目指している。',
+    problem: '日常の会話には価値ある情報が多く含まれているが、後から「あの話、どこでしたっけ」と探す手段がない。メモを取る習慣がない人でも、自然に記録・検索できる仕組みが必要。',
+    vision: '文字起こし精度の向上やAIによる要約・タグ付けを強化し、「会話を資産化する」体験をより多くの人に届けられるプロダクトへ成長させる。',
+    stack: ['Ruby on Rails (API)', 'Vue.js', 'MySQL', 'Docker', 'AWS ECS/Fargate', 'Amazon Cognito', 'GitHub Actions'],
+    link: 'https://lp.crow-note.net',
   },
 ]
 
 export const CAREER = [
   {
+    period: '2020.01 - 2022.07',
+    title: '加茂株式会社（富士花鳥園）バードスタッフ',
+    description: '水鳥・キジ・エミューの飼育管理、新人社員教育、イベント企画・運営を担当。属人化していた業務の標準化を目的に業務マニュアルを作成し社内採用。子供向けの触れ合いイベントを企画し、通年イベントとして採用された。',
+  },
+  {
+    period: '2023.01 -',
+    title: '株式会社レンサ 入社',
+    description: 'Webアプリケーションエンジニアとして、PHP(Zend Framework)・Ruby on Rails・Vue.jsを用いた業務システムの開発・運用保守に従事。自社Webサービスへのフロントエンド開発・Vue.js導入や、会計システムのAPI定義書(Swagger)整備、採用支援システムの障害調査・運用保守などを担当。',
+  },
+  {
     period: '現在',
-    title: '個人開発 CrowNote の開発・運営',
-    description: 'パーソナルナレッジベース「CrowNote」を個人で設計・開発・運営。',
+    title: '駐車場管理システム開発プロジェクト',
+    description: '全国の駐車場を管理するシステムについて、要件定義から基本設計・詳細設計・実装・テスト・リリース・運用保守までを一貫して担当。AWSコスト最適化（年間約560万円削減）、データベースチューニング、障害調査・再発防止、フリーランスメンバーの進捗管理にも従事。',
   },
   {
-    period: '直近',
-    title: 'AWSコスト削減・監視改善',
-    description: 'S3ストレージ最適化による大規模コスト削減、CloudWatchを活用した監視基盤の設計・構築。',
-  },
-  {
-    period: '業務',
-    title: '駐車場管理システムの開発・保守',
-    description: '駐車場業務システムの機能開発・保守・改善を担当。要件定義からリリースまで一貫して対応。',
-  },
-  {
-    period: '経験',
-    title: 'Web系システム開発・運用',
-    description: 'Rails / Vue を中心としたWebシステムの開発・運用。設計から実装・テストまで幅広く対応。',
+    period: '継続中',
+    title: '個人開発 CrowNote の企画・開発・運営',
+    description: '「人生を検索する」をコンセプトに、会話を録音・文字起こしして検索できるサービスを企画・開発・AWSインフラ構築・運営まで一人で実施。',
   },
 ]
 

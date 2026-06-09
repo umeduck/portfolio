@@ -2,10 +2,10 @@
 import { LINKS } from '../data/constants'
 
 const highlights = [
-  { label: '開発領域',  text: 'Rails / Vue / AWS を中心に、バックエンドからインフラまで幅広く対応' },
-  { label: '工程',      text: '要件定義・設計・実装・テスト・リリースまで、上流から下流まで一貫して経験' },
-  { label: '強み',      text: '業務改善・コスト削減といった事業インパクトのある課題解決が得意' },
-  { label: '個人開発',  text: 'パーソナルナレッジベース「CrowNote」を個人で設計・開発・運営' },
+  { label: '開発領域',  text: 'Rails / PHP(Zend Framework) / Vue.js を中心に、AWSインフラまで幅広く対応' },
+  { label: '工程',      text: '要件定義・基本設計・詳細設計・実装・テスト・リリース・運用保守まで一貫して経験' },
+  { label: '強み',      text: 'AWSコスト最適化（年間約560万円削減）やDBチューニングなど、技術と運用両面からの改善提案' },
+  { label: '個人開発',  text: '「人生を検索する」をコンセプトにCrowNoteを企画・開発・AWS構築・運営まで一人で担当' },
 ]
 </script>
 
@@ -37,7 +37,7 @@ const highlights = [
       <div class="mt-10 p-6 bg-accent-50 border border-accent-100 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <p class="font-medium text-slate-900 mb-1">個人開発プロダクト「CrowNote」</p>
-          <p class="text-sm text-slate-600">会話・思考・メモを保存し、あとから検索できる「人生の検索エンジン」を目指して開発中。</p>
+          <p class="text-sm text-slate-600">録音した会話を文字起こしし、あとから検索できるサービス。「人生を検索する」をコンセプトに開発中。</p>
         </div>
         <a :href="LINKS.crownoteLp" target="_blank" rel="noopener" class="btn-primary shrink-0">
           LP を見る

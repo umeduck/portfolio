@@ -11,7 +11,7 @@ import { CAREER } from '../data/constants'
 
       <div class="relative max-w-2xl">
         <!-- Timeline line -->
-        <div class="absolute left-[5.5rem] top-0 bottom-0 w-px bg-slate-200 hidden sm:block"></div>
+        <div class="absolute left-[7.5rem] top-0 bottom-0 w-px bg-slate-200 hidden sm:block"></div>
 
         <div class="flex flex-col gap-6">
           <div
@@ -20,7 +20,7 @@ import { CAREER } from '../data/constants'
             class="flex gap-6"
           >
             <!-- Period label -->
-            <div class="shrink-0 w-20 text-right pt-1 hidden sm:block">
+            <div class="shrink-0 w-28 text-right pt-1 hidden sm:block">
               <span class="font-mono text-xs text-slate-400">{{ item.period }}</span>
             </div>
 
