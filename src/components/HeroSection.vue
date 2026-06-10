@@ -4,38 +4,43 @@ import { PROFILE, LINKS } from '../data/constants'
 
 <template>
   <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
-    <!-- Subtle grid background -->
+    <!-- subtle grid -->
     <div
       class="absolute inset-0 pointer-events-none"
-      style="background-image: linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px); background-size: 48px 48px;"
+      style="background-image: linear-gradient(rgba(129,140,248,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(129,140,248,0.05) 1px, transparent 1px); background-size: 48px 48px;"
     ></div>
-    <!-- Gradient fade at bottom -->
-    <div class="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+    <!-- glow orb -->
+    <div class="absolute -top-32 right-[-10%] w-[36rem] h-[36rem] rounded-full pointer-events-none"
+      style="background: radial-gradient(circle, rgba(99,102,241,0.14) 0%, rgba(167,139,250,0.07) 40%, transparent 70%);"
+    ></div>
+    <!-- crow silhouette (Font Awesome Free "crow" / CC BY 4.0) -->
+    <svg
+      class="absolute right-[4%] top-1/2 -translate-y-1/2 w-72 sm:w-96 lg:w-[28rem] text-ink-800/70 pointer-events-none select-none hidden md:block"
+      viewBox="0 0 640 512" fill="currentColor" aria-hidden="true"
+    >
+      <path d="M544 32h-16.36C513.04 12.68 490.09 0 464 0c-44.18 0-80 35.82-80 80v20.98L12.09 393.57A30.216 30.216 0 0 0 0 417.74c0 22.46 23.64 37.07 43.73 27.03L165.27 384h96.49l44.41 120.1c2.27 6.23 9.15 9.44 15.38 7.17l22.55-8.21c6.23-2.27 9.44-9.15 7.17-15.38L312.94 384H352c1.91 0 3.76-.23 5.66-.29l44.51 120.38c2.27 6.23 9.15 9.44 15.38 7.17l22.55-8.21c6.23-2.27 9.44-9.15 7.17-15.38l-41.24-111.53C485.74 352.8 544 279.26 544 192v-80l96-16c0-35.35-42.98-64-96-64zm-80 72c-13.25 0-24-10.75-24-24s10.75-24 24-24 24 10.75 24 24-10.75 24-24 24z" />
+    </svg>
+    <!-- bottom fade -->
+    <div class="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-ink-950 to-transparent pointer-events-none"></div>
 
     <div class="relative max-w-5xl mx-auto px-4 sm:px-6 py-32 w-full">
       <div class="max-w-2xl">
-        <!-- Label -->
-        <p class="section-label mb-6">Portfolio</p>
+        <p class="section-label mb-6 hero-stagger" style="--i: 0">Portfolio</p>
 
-        <!-- Name -->
-        <h1 class="text-5xl sm:text-6xl font-bold text-slate-900 tracking-tight leading-none mb-3">
-          {{ PROFILE.name }}
-          <span class="text-accent-600">.</span>
+        <h1 class="font-serif text-5xl sm:text-6xl font-bold text-zinc-100 tracking-wider leading-tight mb-4 hero-stagger" style="--i: 1">
+          {{ PROFILE.name }}<span class="sheen-text">.</span>
         </h1>
 
-        <!-- Title -->
-        <div class="mb-6">
-          <p class="text-xl font-medium text-slate-700">{{ PROFILE.title }}</p>
-          <p class="font-mono text-sm text-slate-400 mt-1">{{ PROFILE.titleEn }}</p>
+        <div class="mb-6 hero-stagger" style="--i: 2">
+          <p class="text-xl font-medium text-zinc-300">{{ PROFILE.title }}</p>
+          <p class="font-mono text-sm text-zinc-500 mt-1">{{ PROFILE.titleEn }}</p>
         </div>
 
-        <!-- Bio -->
-        <p class="text-lg text-slate-600 leading-relaxed mb-10 max-w-xl">
+        <p class="text-lg text-zinc-400 leading-relaxed mb-10 max-w-xl hero-stagger" style="--i: 3">
           {{ PROFILE.bio }}
         </p>
 
-        <!-- CTA buttons -->
-        <div class="flex flex-wrap gap-3 mb-12">
+        <div class="flex flex-wrap gap-3 mb-12 hero-stagger" style="--i: 4">
           <a :href="LINKS.crownoteLp" target="_blank" rel="noopener" class="btn-primary">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -50,13 +55,12 @@ import { PROFILE, LINKS } from '../data/constants'
           </a>
         </div>
 
-        <!-- Social links -->
-        <div class="flex items-center gap-5">
+        <div class="flex items-center gap-5 hero-stagger" style="--i: 5">
           <a
             :href="LINKS.github"
             target="_blank"
             rel="noopener"
-            class="flex items-center gap-2 text-sm text-slate-500 hover:text-slate-900 transition-colors"
+            class="flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-200 transition-colors"
             aria-label="GitHub"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -64,12 +68,12 @@ import { PROFILE, LINKS } from '../data/constants'
             </svg>
             GitHub
           </a>
-          <span class="text-slate-200">|</span>
+          <span class="text-ink-700">|</span>
           <a
             :href="LINKS.twitter"
             target="_blank"
             rel="noopener"
-            class="flex items-center gap-2 text-sm text-slate-500 hover:text-slate-900 transition-colors"
+            class="flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-200 transition-colors"
             aria-label="X (Twitter)"
           >
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -82,3 +86,27 @@ import { PROFILE, LINKS } from '../data/constants'
     </div>
   </section>
 </template>
+
+<style scoped>
+.hero-stagger {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--i) * 130ms);
+}
+
+@keyframes hero-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stagger {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+</style>

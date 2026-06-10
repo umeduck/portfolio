@@ -8,40 +8,122 @@
   }
 
   body {
-    @apply bg-white text-slate-800 font-sans antialiased;
+    @apply bg-ink-950 text-zinc-300 font-sans antialiased;
   }
 
-  h1, h2, h3, h4 {
-    @apply font-sans;
+  ::selection {
+    @apply bg-accent-500/40 text-white;
   }
 }
 
 @layer components {
   .section-label {
-    @apply font-mono text-xs tracking-widest text-accent-600 uppercase mb-3;
+    @apply font-mono text-xs tracking-[0.3em] text-accent-400 uppercase mb-3;
   }
 
   .section-title {
-    @apply text-3xl font-semibold text-slate-900 mb-2;
+    @apply font-serif text-3xl sm:text-4xl font-semibold text-zinc-100 mb-2 tracking-wide;
   }
 
   .section-subtitle {
-    @apply text-slate-500 text-base leading-relaxed;
+    @apply text-zinc-500 text-base leading-relaxed;
   }
 
   .card {
-    @apply bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-200 p-6;
+    @apply bg-ink-900/80 rounded-xl border border-ink-700/60 p-6 backdrop-blur-sm
+      transition-all duration-300
+      hover:border-accent-500/40 hover:shadow-[0_0_32px_-8px_rgba(99,102,241,0.25)];
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-accent-600 hover:bg-accent-700 text-white font-medium px-5 py-2.5 rounded-lg transition-colors duration-150 text-sm;
+    @apply inline-flex items-center gap-2 text-white font-medium px-5 py-2.5 rounded-lg text-sm
+      bg-gradient-to-r from-accent-600 via-accent-500 to-sheen-violet bg-[length:200%_100%] bg-left
+      transition-[background-position,box-shadow] duration-500
+      hover:bg-right hover:shadow-[0_0_24px_-4px_rgba(129,140,248,0.5)];
   }
 
   .btn-outline {
-    @apply inline-flex items-center gap-2 border border-slate-300 hover:border-accent-600 hover:text-accent-600 text-slate-700 font-medium px-5 py-2.5 rounded-lg transition-colors duration-150 text-sm;
+    @apply inline-flex items-center gap-2 border border-ink-600 text-zinc-300 font-medium px-5 py-2.5 rounded-lg text-sm
+      transition-colors duration-200 hover:border-accent-400 hover:text-accent-300;
   }
 
   .skill-tag {
-    @apply font-mono text-xs bg-slate-50 border border-slate-200 text-slate-700 px-3 py-1.5 rounded-md;
+    @apply font-mono text-xs bg-ink-800/80 border border-ink-700 text-zinc-300 px-3 py-1.5 rounded-md;
+  }
+
+  /* iridescent text — crow-feather sheen */
+  .sheen-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(120deg, #818cf8, #a78bfa 40%, #38bdf8 70%, #818cf8);
+    background-size: 200% 100%;
+    animation: sheen-slide 6s ease-in-out infinite;
+  }
+
+  @keyframes sheen-slide {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+@layer utilities {
+  /* scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+/* ---- falling feathers ---- */
+.feather {
+  position: absolute;
+  top: -8vh;
+  will-change: transform, opacity;
+  animation: feather-fall linear infinite;
+}
+
+.feather svg {
+  display: block;
+  animation: feather-sway ease-in-out infinite alternate;
+}
+
+@keyframes feather-fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: var(--feather-opacity, 0.5);
+  }
+  90% {
+    opacity: var(--feather-opacity, 0.5);
+  }
+  100% {
+    transform: translateY(115vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes feather-sway {
+  from { transform: translateX(-28px) rotate(-24deg); }
+  to   { transform: translateX(28px) rotate(24deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feather {
+    display: none;
   }
 }
