@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import FeatherBackground from './components/FeatherBackground.vue'
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
@@ -11,17 +12,20 @@ import FooterSection from './components/FooterSection.vue'
 </script>
 
 <template>
-  <div class="min-h-screen">
-    <NavBar />
-    <main>
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <AchievementsSection />
-      <ProjectsSection />
-      <CareerSection />
-      <ContactSection />
-    </main>
-    <FooterSection />
+  <div class="min-h-screen relative">
+    <FeatherBackground />
+    <div class="relative z-10">
+      <NavBar />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <AchievementsSection />
+        <ProjectsSection />
+        <CareerSection />
+        <ContactSection />
+      </main>
+      <FooterSection />
+    </div>
   </div>
 </template>

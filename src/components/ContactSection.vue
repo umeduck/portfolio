@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LINKS, PROFILE } from '../data/constants'
+import { LINKS } from '../data/constants'
 
 const contacts = [
   {
@@ -30,29 +30,32 @@ const contacts = [
 </script>
 
 <template>
-  <section id="contact" class="py-24 bg-white">
+  <section id="contact" class="py-24">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <p class="section-label">Contact</p>
-      <h2 class="section-title">連絡先・リンク</h2>
-      <p class="section-subtitle mb-12">
-        お気軽にご連絡ください。採用・協業・フィードバックなど、何でも歓迎です。
-      </p>
+      <div v-reveal>
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">連絡先・リンク</h2>
+        <p class="section-subtitle mb-12">
+          お気軽にご連絡ください。採用・協業・フィードバックなど、何でも歓迎です。
+        </p>
+      </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <a
-          v-for="contact in contacts"
+          v-for="(contact, i) in contacts"
           :key="contact.label"
           :href="contact.href"
           target="_blank"
           rel="noopener"
-          class="card flex flex-col items-center text-center gap-3 hover:border-accent-200 hover:bg-accent-50 group transition-all duration-150"
+          v-reveal="i * 100"
+          class="card flex flex-col items-center text-center gap-3 group"
         >
-          <span class="text-slate-500 group-hover:text-accent-600 transition-colors" v-html="contact.icon"></span>
+          <span class="text-zinc-500 group-hover:text-accent-300 transition-colors" v-html="contact.icon"></span>
           <div>
-            <p class="font-semibold text-slate-800 text-sm">{{ contact.label }}</p>
-            <p class="text-xs text-slate-500 mt-0.5">{{ contact.description }}</p>
+            <p class="font-semibold text-zinc-200 text-sm">{{ contact.label }}</p>
+            <p class="text-xs text-zinc-500 mt-0.5">{{ contact.description }}</p>
           </div>
-          <svg class="w-3.5 h-3.5 text-slate-300 group-hover:text-accent-400 transition-colors mt-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-3.5 h-3.5 text-ink-600 group-hover:text-accent-400 transition-colors mt-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </a>
