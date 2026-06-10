@@ -16,15 +16,19 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 <template>
   <header
     :class="[
-      'fixed top-0 inset-x-0 z-50 transition-all duration-200',
-      scrolled ? 'bg-white/95 backdrop-blur border-b border-slate-100 shadow-sm' : 'bg-transparent',
+      'fixed top-0 inset-x-0 z-50 transition-all duration-300',
+      scrolled ? 'bg-ink-950/85 backdrop-blur border-b border-ink-800' : 'bg-transparent',
     ]"
   >
     <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
       <!-- Logo -->
-      <a href="#" class="font-mono text-sm font-medium text-slate-900 tracking-tight hover:text-accent-600 transition-colors">
+      <a href="#" class="font-mono text-sm font-medium text-zinc-100 tracking-tight hover:text-accent-300 transition-colors flex items-center gap-2">
+        <!-- crow mark (Font Awesome Free "crow" / CC BY 4.0) -->
+        <svg class="w-4 h-4 text-accent-400" viewBox="0 0 640 512" fill="currentColor" aria-hidden="true">
+          <path d="M544 32h-16.36C513.04 12.68 490.09 0 464 0c-44.18 0-80 35.82-80 80v20.98L12.09 393.57A30.216 30.216 0 0 0 0 417.74c0 22.46 23.64 37.07 43.73 27.03L165.27 384h96.49l44.41 120.1c2.27 6.23 9.15 9.44 15.38 7.17l22.55-8.21c6.23-2.27 9.44-9.15 7.17-15.38L312.94 384H352c1.91 0 3.76-.23 5.66-.29l44.51 120.38c2.27 6.23 9.15 9.44 15.38 7.17l22.55-8.21c6.23-2.27 9.44-9.15 7.17-15.38l-41.24-111.53C485.74 352.8 544 279.26 544 192v-80l96-16c0-35.35-42.98-64-96-64zm-80 72c-13.25 0-24-10.75-24-24s10.75-24 24-24 24 10.75 24 24-10.75 24-24 24z" />
+        </svg>
         {{ PROFILE.nameEn }}
-        <span class="text-accent-600">.</span>
+        <span class="text-accent-400">.</span>
       </a>
 
       <!-- Desktop nav -->
@@ -33,7 +37,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
           v-for="item in NAV_ITEMS"
           :key="item.href"
           :href="item.href"
-          class="text-sm text-slate-600 hover:text-accent-600 transition-colors font-medium"
+          class="text-sm text-zinc-400 hover:text-accent-300 transition-colors font-medium"
         >
           {{ item.label }}
         </a>
@@ -44,7 +48,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
       <!-- Mobile hamburger -->
       <button
-        class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
+        class="md:hidden p-2 rounded-lg text-zinc-400 hover:bg-ink-800 transition-colors"
         @click="menuOpen = !menuOpen"
         aria-label="メニュー"
       >
@@ -58,13 +62,13 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
     </div>
 
     <!-- Mobile menu -->
-    <div v-if="menuOpen" class="md:hidden bg-white border-b border-slate-100 px-4 pb-4">
+    <div v-if="menuOpen" class="md:hidden bg-ink-950/95 backdrop-blur border-b border-ink-800 px-4 pb-4">
       <nav class="flex flex-col gap-1 pt-2">
         <a
           v-for="item in NAV_ITEMS"
           :key="item.href"
           :href="item.href"
-          class="text-sm text-slate-700 hover:text-accent-600 px-2 py-2 rounded-md hover:bg-slate-50 transition-colors font-medium"
+          class="text-sm text-zinc-300 hover:text-accent-300 px-2 py-2 rounded-md hover:bg-ink-800 transition-colors font-medium"
           @click="menuOpen = false"
         >
           {{ item.label }}
