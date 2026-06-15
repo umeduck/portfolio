@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "encrypt": "node scripts/encrypt-private-data.mjs"
   },
   "dependencies": {
     "vue": "^3.4.0"

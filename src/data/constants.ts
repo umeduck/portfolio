@@ -1,5 +1,7 @@
+// 公開用データ。本名・メールアドレス・企業名は含めない。
+// 完全版は private-data.json(gitignore対象)で管理し、暗号化して配信する。
 export const PROFILE = {
-  name: '梅村 将暁',
+  name: 'Umemura',
   nameEn: 'Umemura',
   title: 'システムエンジニア / 個人開発者',
   titleEn: 'Software Engineer / Independent Developer',
@@ -9,7 +11,7 @@ export const PROFILE = {
 export const LINKS = {
   github: 'https://github.com/umeduck',
   twitter: 'https://x.com/crow_note_2026',
-  email: 'mailto:m_umemura@crow-note.net',
+  email: '',
   crownoteLp: 'https://lp.crow-note.net',
 }
 
@@ -92,7 +94,7 @@ export const PROJECTS = [
 export const CAREER = [
   {
     period: '2023.01 - 2023.06',
-    title: '株式会社レンサ 入社／自社占いアプリ開発',
+    title: 'Web系事業会社 入社／自社占いアプリ開発',
     description: '自社占いアプリの実装を担当。占いAPIを使用し、CakePHPでMVCを実装。フロントエンドはjQueryでアニメーションを作成し、途中からはjQueryからVue.jsへの移行にも携わった。',
   },
   {
@@ -112,8 +114,8 @@ export const CAREER = [
   },
   {
     period: '2025.02 - 現在',
-    title: 'ピットデザイン株式会社 入社／ナンバー認識型駐車場管理システム開発',
-    description: 'ナンバー認識型駐車場管理システムを手掛ける同社へ転職。S3運用見直しによる大規模コスト削減、GitHub Actionsを用いたAWS ECS・S3/CloudFrontへのCI/CD構築、画像認識AI基盤へのオートスケーリング導入、駐車場管理者向け管理UIの開発に従事。駐車場管理システムの要件定義から開発・テストまでをPL（プロジェクトリーダー）として推進。',
+    title: '事業会社へ転職／ナンバー認識型駐車場管理システム開発',
+    description: 'ナンバー認識型駐車場管理システムを手掛ける企業へ転職。S3運用見直しによる大規模コスト削減、GitHub Actionsを用いたAWS ECS・S3/CloudFrontへのCI/CD構築、画像認識AI基盤へのオートスケーリング導入、駐車場管理者向け管理UIの開発に従事。駐車場管理システムの要件定義から開発・テストまでをPL（プロジェクトリーダー）として推進。',
   },
   {
     period: '継続中',
