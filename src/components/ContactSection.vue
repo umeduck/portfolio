@@ -52,6 +52,8 @@ const contacts = computed(() => [
           v-reveal="i * 100"
           class="card flex flex-col items-center text-center gap-3 group"
         >
+          <!-- icon はこのファイル内で定義した固定の SVG 文字列のみ（ユーザー入力なし）-->
+          <!-- eslint-disable-next-line vue/no-v-html -->
           <span class="text-zinc-500 group-hover:text-accent-300 transition-colors" v-html="contact.icon"></span>
           <div>
             <p class="font-semibold text-zinc-200 text-sm">{{ contact.label }}</p>
