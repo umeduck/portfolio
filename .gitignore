@@ -2,3 +2,6 @@ node_modules/
 dist/
 .DS_Store
 *.local
+
+# 非公開の個人情報(暗号化前の元データ)
+private-data.json

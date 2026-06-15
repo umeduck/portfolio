@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { LINKS } from '../data/constants'
+import { computed } from 'vue'
+import { LINKS } from '../data/profile'
 
-const contacts = [
+// メールは限定公開ページ解錠後のみ表示されるため、href が空の項目は除外する
+const contacts = computed(() => [
   {
     label: 'GitHub',
     description: 'コード・個人開発',
@@ -26,7 +28,7 @@ const contacts = [
     href: LINKS.crownoteLp,
     icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
   },
-]
+].filter((contact) => contact.href))
 </script>
 
 <template>

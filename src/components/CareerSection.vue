@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CAREER } from '../data/constants'
+import { CAREER } from '../data/profile'
 </script>
 
 <template>
