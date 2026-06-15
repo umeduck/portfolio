@@ -20,7 +20,7 @@ import { PROJECTS } from '../data/constants'
         >
           <!-- corner glow -->
           <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full pointer-events-none"
-            style="background: radial-gradient(circle, rgba(167,139,250,0.12) 0%, transparent 70%);"
+               style="background: radial-gradient(circle, rgba(167,139,250,0.12) 0%, transparent 70%);"
           ></div>
 
           <!-- Header -->
