@@ -11,7 +11,7 @@ import { PROFILE, LINKS } from '../data/profile'
     ></div>
     <!-- glow orb -->
     <div class="absolute -top-32 right-[-10%] w-[36rem] h-[36rem] rounded-full pointer-events-none"
-      style="background: radial-gradient(circle, rgba(99,102,241,0.14) 0%, rgba(167,139,250,0.07) 40%, transparent 70%);"
+         style="background: radial-gradient(circle, rgba(99,102,241,0.14) 0%, rgba(167,139,250,0.07) 40%, transparent 70%);"
     ></div>
     <!-- crow silhouette (Font Awesome Free "crow" / CC BY 4.0) -->
     <svg

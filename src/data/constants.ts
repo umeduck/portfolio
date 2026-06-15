@@ -1,8 +1,8 @@
 // 公開用データ。本名・メールアドレス・企業名は含めない。
 // 完全版は private-data.json(gitignore対象)で管理し、暗号化して配信する。
 export const PROFILE = {
-  name: 'Umemura',
-  nameEn: 'Umemura',
+  name: 'Ume',
+  nameEn: 'Ume',
   title: 'システムエンジニア / 個人開発者',
   titleEn: 'Software Engineer / Independent Developer',
   bio: '業務改善・Web開発・AWS運用を軸に、事業とシステムの間にある複雑な課題を整理し、前に進めるエンジニアです。',
