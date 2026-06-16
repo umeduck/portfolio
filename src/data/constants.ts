@@ -12,7 +12,7 @@ export const LINKS = {
   github: 'https://github.com/umeduck',
   twitter: 'https://x.com/crow_note_2026',
   email: '',
-  crownoteLp: 'https://lp.crow-note.net',
+  crownoteLp: 'https://lp.crow-note.net/ja',
 }
 
 export const SKILLS = [
@@ -87,7 +87,7 @@ export const PROJECTS = [
     problem: '日常の会話には価値ある情報が多く含まれているが、後から「あの話、どこでしたっけ」と探す手段がない。メモを取る習慣がない人でも、自然に記録・検索できる仕組みが必要。',
     vision: '文字起こし精度の向上やAIによる要約・タグ付けを強化し、「会話を資産化する」体験をより多くの人に届けられるプロダクトへ成長させる。',
     stack: ['Ruby on Rails (API)', 'Vue.js', 'MySQL', 'Docker', 'AWS ECS/Fargate', 'Amazon Cognito', 'GitHub Actions'],
-    link: 'https://lp.crow-note.net',
+    link: 'https://lp.crow-note.net/ja',
   },
 ]
 
